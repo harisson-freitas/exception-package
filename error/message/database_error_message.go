@@ -32,5 +32,6 @@ func GetMessageErrorUpdate(e string) (err *error.Error) {
 }
 
 func GetMessageErrorDelete(e string) (err *error.Error) {
-	return error.CreateError(TYPE_NAME, "Error deleting user in database!")
+	msg := fmt.Sprintf("Error deleting user in database! %s", e)
+	return error.CreateError(TYPE_NAME, msg)
 }
